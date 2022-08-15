@@ -1,0 +1,31 @@
+class Shop:
+    rent = 15000
+    def __init__(self,city,shop_name,shop_no):
+        self.city = city
+        self.shop_name = shop_name
+        self.shop_no = shop_no
+    def paid_rent(self,amount):
+        self.rent = self.rent - amount
+    @classmethod
+    def change_rent(cls,amount):
+        cls.rent = amount
+    
+    @staticmethod
+    def workstatus(count):
+        available_employees = [20,15,12,18,22]
+        if count in available_employees:
+            return "Work will be completed within a time limit"
+        else:
+            return "Work won't be completed in on time"
+s1 = Shop("Chennai","Modern city",50)
+s2 = Shop("Madurai","Golden city",45)
+Shop.change_rent = 12000
+print(s1.change_rent)
+print(s2.change_rent)
+
+print(s1.workstatus(25))
+print(s2.workstatus(20))
+
+
+    
+    
