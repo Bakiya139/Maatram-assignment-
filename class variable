@@ -1,0 +1,23 @@
+from datetime import date
+class Employee:
+    salary = 50000
+    def __init__(self,name,city,dob):
+        self.name = name
+        self.city = city
+        self.dob = dob
+    def age(self):
+        current_year = date.today().year
+        return current_year - self. dob
+e1 = Employee("Ashok","Chennai",1995)
+e2 = Employee("kishore","Ooty",1992)
+print(e1.salary)
+print(e2.salary)
+
+Employee.salary = 30000
+print(e1.salary)
+print(e2.salary)
+
+e2.salary = 40000
+print(e1.salary)
+print(e2.salary)
+        
