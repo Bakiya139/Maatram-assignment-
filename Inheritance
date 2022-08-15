@@ -1,0 +1,37 @@
+#inheritance 
+from datetime import date
+class Student:
+    def __init__(self,name,dob,rollno,city):
+        self.name = name
+        self.dob = dob
+        self.rollno = rollno
+        self.city = city
+    
+    def age(self):
+        current_year = date.today().year
+        return current_year - self. dob
+class Chemical(Student):
+    exam_fees = 1000
+    def __init__(self,name,dob,rollno,city,year,contact):
+        super().__init__(name,dob,rollno,city,contact)
+        self.year = year
+        self. contact = contact
+class Exam_fees(Chemical):
+    pass
+class Medical(Student):
+    def __init__(self,name,dob,rollno,city,contact):
+        super().__init__(name,dob,rollno,city)
+        self.contact = contact
+class Department(Chemical,Medical):
+    pass
+    
+stu1 =Department("Aravind",1999,50,"Chennai",1998,"9772666779")
+stu2 =Department("Akash",1998,30,"kanchipuram",1999,"8755788788")
+stu1.exam_fees = 1500
+print(stu1.name)
+print(stu1.exam_fees)
+print(stu2.exam_fees)
+
+    
+    
+    
